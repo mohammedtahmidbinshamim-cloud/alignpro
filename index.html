@@ -23,13 +23,20 @@
             <div class="logo">
                 <img src="assets/logo.png" alt="AlignPro Logo">
             </div>
-            <ul class="nav-links">
-                <li><a href="#services">Services</a></li>
-                <li><a href="#results">Results</a></li>
-                <li><a href="#product">Products</a></li>
-                <li><a href="#testimonials">Reviews</a></li>
-            </ul>
-            <a href="#get-started" class="btn btn-primary">Get Started</a>
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <i data-feather="menu"></i>
+            </button>
+            <div class="nav-links-wrapper" id="nav-links-wrapper">
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#services">Treatable Cases</a></li>
+                    <li><a href="#results">Why Choose Us</a></li>
+                    <li><a href="#scrollytelling">Our Journey</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#testimonials">Reviews</a></li>
+                </ul>
+                <a href="#scrollytelling" class="btn btn-primary">Get Started</a>
+            </div>
         </div>
     </nav>
 
@@ -37,16 +44,19 @@
     <section class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <div class="badge">Clinical Precision</div>
-                <h1>Your perfect smile,<br>beautifully aligned.</h1>
+                <h1>Every Smile has a story,<br>Start yours.</h1>
                 <p>Experience the invisible, comfortable, and clinical approach to teeth straightening. Engineered for
                     precision, designed for you.</p>
                 <div class="hero-actions">
                     <a href="#scrollytelling" class="btn btn-primary">Start Your Journey</a>
-                    <a href="#services" class="btn btn-secondary">Our Services</a>
+                    <a href="#services" class="btn btn-secondary">Consultation</a>
                 </div>
             </div>
-
+            <div class="hero-image-wrapper">
+                <div class="hero-image">
+                    <img src="assets/nursebg3.png" alt="Clinical Professional">
+                </div>
+            </div>
         </div>
     </section>
 
@@ -190,7 +200,7 @@
         <div class="footer-container">
             <div class="footer-brand">
                 <div class="logo">
-                    <img src="assets/logo.jpeg" alt="AlignPro Logo">
+                    <img src="assets/logobg.jpeg" alt="AlignPro Logo">
                 </div>
                 <p>Precision alignment for a confident you.</p>
             </div>
@@ -230,6 +240,30 @@
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
+            });
+        });
+
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('mobile-menu-toggle');
+        const navWrapper = document.getElementById('nav-links-wrapper');
+
+        menuToggle.addEventListener('click', () => {
+            navWrapper.classList.toggle('active');
+            const icon = menuToggle.querySelector('i');
+            if (navWrapper.classList.contains('active')) {
+                icon.setAttribute('data-feather', 'x');
+            } else {
+                icon.setAttribute('data-feather', 'menu');
+            }
+            feather.replace();
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navWrapper.classList.remove('active');
+                menuToggle.querySelector('i').setAttribute('data-feather', 'menu');
+                feather.replace();
             });
         });
 
