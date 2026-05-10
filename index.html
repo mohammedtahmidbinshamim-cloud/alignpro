@@ -63,6 +63,16 @@
         </div>
     </section>
 
+    <!-- Cinematic Scrollytelling Section -->
+    <section class="scrollytelling-section">
+        <div class="scrollytelling-container">
+            <canvas id="transformation-canvas"></canvas>
+            <div class="scrollytelling-text" id="scrolly-text">
+                <h2>Precision in Every Detail</h2>
+                <p>The journey to your perfect smile, captured in motion.</p>
+            </div>
+        </div>
+    </section>
 
     <!-- Treatable Cases Section -->
     <section id="treatable-cases" class="treatable-cases">
@@ -537,14 +547,36 @@
             });
         }
 
-        // Navbar background transition
-        window.addEventListener("scroll", () => {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
+        // Navbar behavior
+        let lastScrollY = window.scrollY;
+        const navbar = document.querySelector('.navbar');
+
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+            const scrollySection = document.querySelector('.scrollytelling-section');
+            const rect = scrollySection.getBoundingClientRect();
+            // Hide navbar if we are in the scrollytelling section or scrolling down
+            const isInsideScrolly = rect.top <= 0 && rect.bottom >= 0;
+
+            if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                // Scrolling down - hide navbar
+                navbar.classList.add('navbar--hidden');
+            } else {
+                // Scrolling up - show navbar
+                navbar.classList.remove('navbar--hidden');
+            }
+
+            // Forced hide in scrollytelling section for immersion
+            if (isInsideScrolly) {
+                navbar.classList.add('navbar--hidden');
+            }
+
+            if (currentScrollY > 50) {
                 navbar.classList.add('scrolled');
             } else {
                 navbar.classList.remove('scrolled');
             }
+            lastScrollY = currentScrollY;
         });
 
         // Intersection Observer for other animations
@@ -582,6 +614,111 @@
                 }
             });
         });
+
+        // Cinematic Scrollytelling Implementation
+        const canvas = document.getElementById('transformation-canvas');
+        const context = canvas.getContext('2d');
+        const scrollyText = document.getElementById('scrolly-text');
+        const frameCount = 240;
+        
+        const currentFrame = index => (
+            `assets/ezgif-frame-${index.toString().padStart(3, '0')}.jpg`
+        );
+
+        const images = [];
+        const transformation = {
+            frame: 0
+        };
+
+        // Preload images
+        let loadedImages = 0;
+        for (let i = 1; i <= frameCount; i++) {
+            const img = new Image();
+            img.src = currentFrame(i);
+            img.onload = () => {
+                loadedImages++;
+                if (loadedImages === 1) {
+                    // Draw first frame immediately
+                    render();
+                }
+            };
+            images.push(img);
+        }
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            render();
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        function render() {
+            const img = images[Math.floor(transformation.frame)];
+            if (!img) return;
+
+            const canvasRatio = canvas.width / canvas.height;
+            const imgRatio = img.width / img.height;
+            let drawWidth, drawHeight, offsetX, offsetY;
+
+            if (canvasRatio > imgRatio) {
+                drawHeight = canvas.height;
+                drawWidth = canvas.height * imgRatio;
+                offsetX = (canvas.width - drawWidth) / 2;
+                offsetY = 0;
+            } else {
+                drawWidth = canvas.width;
+                drawHeight = canvas.width / imgRatio;
+                offsetX = 0;
+                offsetY = (canvas.height - drawHeight) / 2;
+            }
+
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            context.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
+            
+            // Subtle cinematic scaling toward the end
+            const scale = 1 + (transformation.frame / frameCount) * 0.05;
+            canvas.style.transform = `scale(${scale})`;
+        }
+
+        // Use GSAP-like smooth interpolation for scroll
+        let targetFrame = 0;
+        let currentInterpolatedFrame = 0;
+
+        window.addEventListener('scroll', () => {
+            const section = document.querySelector('.scrollytelling-section');
+            const rect = section.getBoundingClientRect();
+            const sectionHeight = section.offsetHeight;
+            const viewportHeight = window.innerHeight;
+
+            if (rect.top <= 0 && rect.bottom >= viewportHeight) {
+                const scrollFraction = Math.abs(rect.top) / (sectionHeight - viewportHeight);
+                targetFrame = Math.min(frameCount - 1, Math.floor(scrollFraction * frameCount));
+                
+                // Show text at specific points
+                if (scrollFraction > 0.3 && scrollFraction < 0.7) {
+                    scrollyText.classList.add('visible');
+                } else {
+                    scrollyText.classList.remove('visible');
+                }
+            }
+        });
+
+        function animate() {
+            // Smoothly interpolate between current frame and target frame
+            const ease = 0.1;
+            currentInterpolatedFrame += (targetFrame - currentInterpolatedFrame) * ease;
+            
+            if (Math.abs(currentInterpolatedFrame - transformation.frame) > 0.01) {
+                transformation.frame = currentInterpolatedFrame;
+                render();
+            }
+            
+            requestAnimationFrame(animate);
+        }
+
+        requestAnimationFrame(animate);
     </script>
 </body>
 
