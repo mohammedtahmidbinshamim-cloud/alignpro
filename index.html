@@ -38,41 +38,39 @@
                     <li><a href="#faq">FAQs</a></li>
                     <li><a href="#testimonials">Reviews</a></li>
                 </ul>
-                <a href="consultation.html" class="btn btn-primary">Consultation</a>
+                <a href="consultation.html" class="btn btn-primary">BOOK CONSULTATION</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <!-- Floating Background Shapes (Restricted to Hero) -->
+        <div class="hero-shapes">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+            <div class="floating-shape shape-4"></div>
+        </div>
         <div class="hero-container">
             <div class="hero-content">
-                <h1>Every Smile has a story,<br>Start yours.</h1>
-                <p>Experience the invisible, comfortable, and clinical approach to teeth straightening. Engineered for
-                    precision, designed for you.</p>
+                <h1>EVERY SMILE<br>HAS A STORY.<br>START YOURS.</h1>
+                <p>Orthodontist-driven clear aligner solutions designed for precision, comfort, and predictable
+                    outcomes.</p>
                 <div class="hero-actions">
-                    <a href="#our-journey" class="btn btn-primary">Start Your Journey</a>
-                    <a href="consultation.html" class="btn btn-secondary">Consultation</a>
+                    <a href="consultation.html" class="btn btn-primary">BOOK CONSULTATION</a>
+                    <a href="#treatable-cases" class="btn btn-secondary">VIEW TREATABLE CASES</a>
                 </div>
             </div>
             <div class="hero-image-wrapper">
                 <div class="hero-image">
-                    <img src="assets/nursebg3.png" alt="Clinical Professional">
+                    <img src="assets/nurseholdingboxbg.png" alt="Clinical Professional">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Cinematic Scrollytelling Section -->
-    <section class="scrollytelling-section">
-        <div class="scrollytelling-container">
-            <canvas id="transformation-canvas"></canvas>
-            <div class="scrollytelling-text" id="scrolly-text">
-                <h2>Precision in Every Detail</h2>
-                <p>The journey to your perfect smile, captured in motion.</p>
-            </div>
-        </div>
-    </section>
+
 
     <!-- Treatable Cases Section -->
     <section id="treatable-cases" class="treatable-cases">
@@ -162,22 +160,117 @@
         </div>
     </section>
 
-    <!-- Why Choose Us Section (Previously Results) -->
-    <section id="why-choose-us" class="results">
-        <div class="results-container">
-            <div class="results-image">
-                <img src="assets/tray.png" alt="Premium Clear Aligner Tray">
+    <!-- Why Choose Us Section -->
+    <section id="why-choose-us" class="why-choose-us">
+        <!-- Tier 1: Clinical Trust & Premium Technology Grid -->
+        <div class="features-grid-container">
+            <div class="section-header animate-on-scroll">
+                <h2>Why Choose AlignPro</h2>
+                <p>We blend world-class clinical expertise with state-of-the-art material science to deliver the
+                    ultimate clear aligner experience.</p>
             </div>
-            <div class="results-content">
-                <h2>Engineered for Excellence.</h2>
-                <p>Every AlignPro tray is a masterpiece of orthodontic engineering. Crafted from proprietary
-                    medical-grade polymers, our trays provide the perfect balance of gentle pressure and invisible
-                    clarity.</p>
-                <ul class="benefits-list">
-                    <li><i data-feather="check"></i> <span>Laser-trimmed for a seamless gumline fit</span></li>
-                    <li><i data-feather="check"></i> <span>Stain-resistant and BPA-free materials</span></li>
-                    <li><i data-feather="check"></i> <span>Engineered for 22-hour daily comfort</span></li>
-                </ul>
+
+            <div class="features-grid">
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon-wrapper">
+                        <i data-feather="activity"></i>
+                    </div>
+                    <h3>Orthodontist-Driven Planning</h3>
+                    <p>Your smile is guided by certified orthodontists rather than automated algorithms, ensuring safe,
+                        biologically sound, and highly precise movements.</p>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon-wrapper">
+                        <i data-feather="heart"></i>
+                    </div>
+                    <h3>Dedicated Patient Follow-Up</h3>
+                    <p>Experience peace of mind with regular virtual and in-person check-ins by clinical experts
+                        monitoring your tooth transit at every stage.</p>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon-wrapper">
+                        <i data-feather="layers"></i>
+                    </div>
+                    <h3>Premium Flexible Materials</h3>
+                    <p>Engineered from multi-layer medical polymers that apply gentle, sustained pressure for
+                        comfortable teeth straightening without peak-pain cycles.</p>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon-wrapper">
+                        <i data-feather="cpu"></i>
+                    </div>
+                    <h3>Precision Manufacturing</h3>
+                    <p>Micron-accurate 3D printing combined with advanced robotic finishing creates a glass-clear
+                        aligner that fits your unique anatomy seamlessly.</p>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon-wrapper">
+                        <i data-feather="zap"></i>
+                    </div>
+                    <h3>Faster Workflow</h3>
+                    <p>Direct digital scans to manufacturing pipeline eliminates shipping delays. Receive your custom
+                        aligner kit in a fraction of the standard time.</p>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon-wrapper">
+                        <i data-feather="eye"></i>
+                    </div>
+                    <h3>Predictable Outcomes</h3>
+                    <p>Advanced biomechanical simulations model every tooth trajectory, ensuring the final visual result
+                        perfectly matches the initial plan.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tier 2: Apple-Style Material Visual Showcase (Dark Mode Segment) -->
+        <div class="material-showcase-container">
+            <div class="material-showcase-inner">
+                <div class="material-header animate-on-scroll">
+                    <span class="tech-badge">MATERIAL ENGINEERING</span>
+                    <h2>The Anatomy of the Tray.</h2>
+                    <p>A masterclass in clinical material design. Translucent, elastic, and engineered down to the
+                        micron.</p>
+                </div>
+
+                <div class="anatomy-visual-wrapper">
+                    <!-- Left Callouts -->
+                    <div class="anatomy-callouts left-callouts">
+                        <div class="anatomy-callout-item animate-on-scroll" data-point="edge">
+                            <span class="callout-num">01</span>
+                            <h4>LASER-TRIMMED SCALLOP</h4>
+                            <p>Scalloped precisely at 0.5mm relative to the gingival margin, offering maximum retention
+                                and complete invisibility without irritation.</p>
+                        </div>
+                        <div class="anatomy-callout-item animate-on-scroll" data-point="polymer">
+                            <span class="callout-num">02</span>
+                            <h4>ELASTOMERIC INNER CORE</h4>
+                            <p>A highly elastic elastomeric core sandwiched between protective shell outer layers to
+                                deliver sustained, constant low-intensity forces.</p>
+                        </div>
+                    </div>
+
+                    <!-- Center Aligner Visual -->
+                    <div class="anatomy-center-visual">
+                        <div class="ambient-glow"></div>
+                        <img src="assets/traybg.png" alt="AlignPro Advanced Aligner" class="anatomy-tray-img">
+                    </div>
+
+                    <!-- Right Callouts -->
+                    <div class="anatomy-callouts right-callouts">
+                        <div class="anatomy-callout-item animate-on-scroll" data-point="texture">
+                            <span class="callout-num">03</span>
+                            <h4>MICRO-TEXTURED MATTE</h4>
+                            <p>Features a specialized non-glossy surface texture that refracts ambient light exactly
+                                like natural teeth enamel, bypassing unwanted shiny reflections.</p>
+                        </div>
+                        <div class="anatomy-callout-item animate-on-scroll" data-point="resistance">
+                            <span class="callout-num">04</span>
+                            <h4>HYPER-RESISTANT BARRIER</h4>
+                            <p>Shields the tray from discoloration, high acid levels, and regular wear, guaranteeing
+                                crystal clear aesthetics for the full duration of wear.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -425,6 +518,49 @@
         </div>
     </footer>
 
+    <!-- Consultation Modal Structure -->
+    <div id="consultation-modal" class="modal-overlay">
+        <div class="modal-container">
+            <button class="modal-close" id="modal-close-btn">&times;</button>
+            <div class="modal-header">
+                <h2>BOOK CONSULTATION</h2>
+                <p>Schedule your assessment with an orthodontist and begin your journey to a perfect smile.</p>
+            </div>
+            <form id="consultation-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="modal-first-name">First Name</label>
+                        <input type="text" id="modal-first-name" placeholder="First Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="modal-last-name">Last Name</label>
+                        <input type="text" id="modal-last-name" placeholder="Last Name" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="modal-email">Email Address</label>
+                        <input type="email" id="modal-email" placeholder="email@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="modal-phone">Phone Number</label>
+                        <input type="tel" id="modal-phone" placeholder="Phone Number" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="modal-role">I am a...</label>
+                    <select id="modal-role" required>
+                        <option value="" disabled selected>Select option</option>
+                        <option value="Clinic">Clinic</option>
+                        <option value="Doctor">Doctor</option>
+                        <option value="Patient">Patient</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary form-submit-btn">BOOK CONSULTATION</button>
+            </form>
+        </div>
+    </div>
+
     <script>
         // Initialize Feather Icons
         feather.replace();
@@ -548,35 +684,16 @@
         }
 
         // Navbar behavior
-        let lastScrollY = window.scrollY;
         const navbar = document.querySelector('.navbar');
 
         window.addEventListener('scroll', () => {
             const currentScrollY = window.scrollY;
-            const scrollySection = document.querySelector('.scrollytelling-section');
-            const rect = scrollySection.getBoundingClientRect();
-            // Hide navbar if we are in the scrollytelling section or scrolling down
-            const isInsideScrolly = rect.top <= 0 && rect.bottom >= 0;
-
-            if (currentScrollY > lastScrollY && currentScrollY > 100) {
-                // Scrolling down - hide navbar
-                navbar.classList.add('navbar--hidden');
-            } else {
-                // Scrolling up - show navbar
-                navbar.classList.remove('navbar--hidden');
-            }
-
-            // Forced hide in scrollytelling section for immersion
-            if (isInsideScrolly) {
-                navbar.classList.add('navbar--hidden');
-            }
 
             if (currentScrollY > 50) {
                 navbar.classList.add('scrolled');
             } else {
                 navbar.classList.remove('scrolled');
             }
-            lastScrollY = currentScrollY;
         });
 
         // Intersection Observer for other animations
@@ -615,110 +732,60 @@
             });
         });
 
-        // Cinematic Scrollytelling Implementation
-        const canvas = document.getElementById('transformation-canvas');
-        const context = canvas.getContext('2d');
-        const scrollyText = document.getElementById('scrolly-text');
-        const frameCount = 240;
-        
-        const currentFrame = index => (
-            `assets/ezgif-frame-${index.toString().padStart(3, '0')}.jpg`
-        );
+        // Consultation Modal Logic
+        const modal = document.getElementById('consultation-modal');
+        const modalClose = document.getElementById('modal-close-btn');
+        const bookingTriggers = document.querySelectorAll('a[href="consultation.html"]');
+        const consultationForm = document.getElementById('consultation-form');
 
-        const images = [];
-        const transformation = {
-            frame: 0
-        };
+        // Open modal on clicking any "BOOK CONSULTATION" button
+        bookingTriggers.forEach(trigger => {
+            trigger.addEventListener('click', (e) => {
+                e.preventDefault();
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Lock background scrolling
+            });
+        });
 
-        // Preload images
-        let loadedImages = 0;
-        for (let i = 1; i <= frameCount; i++) {
-            const img = new Image();
-            img.src = currentFrame(i);
-            img.onload = () => {
-                loadedImages++;
-                if (loadedImages === 1) {
-                    // Draw first frame immediately
-                    render();
-                }
-            };
-            images.push(img);
+        // Close modal
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = ''; // Unlock scrolling
         }
 
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            render();
-        }
+        modalClose.addEventListener('click', closeModal);
 
-        window.addEventListener('resize', resizeCanvas);
-        resizeCanvas();
-
-        function render() {
-            const img = images[Math.floor(transformation.frame)];
-            if (!img) return;
-
-            const canvasRatio = canvas.width / canvas.height;
-            const imgRatio = img.width / img.height;
-            let drawWidth, drawHeight, offsetX, offsetY;
-
-            if (canvasRatio > imgRatio) {
-                drawHeight = canvas.height;
-                drawWidth = canvas.height * imgRatio;
-                offsetX = (canvas.width - drawWidth) / 2;
-                offsetY = 0;
-            } else {
-                drawWidth = canvas.width;
-                drawHeight = canvas.width / imgRatio;
-                offsetX = 0;
-                offsetY = (canvas.height - drawHeight) / 2;
-            }
-
-            context.clearRect(0, 0, canvas.width, canvas.height);
-            context.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
-            
-            // Subtle cinematic scaling toward the end
-            const scale = 1 + (transformation.frame / frameCount) * 0.05;
-            canvas.style.transform = `scale(${scale})`;
-        }
-
-        // Use GSAP-like smooth interpolation for scroll
-        let targetFrame = 0;
-        let currentInterpolatedFrame = 0;
-
-        window.addEventListener('scroll', () => {
-            const section = document.querySelector('.scrollytelling-section');
-            const rect = section.getBoundingClientRect();
-            const sectionHeight = section.offsetHeight;
-            const viewportHeight = window.innerHeight;
-
-            if (rect.top <= 0 && rect.bottom >= viewportHeight) {
-                const scrollFraction = Math.abs(rect.top) / (sectionHeight - viewportHeight);
-                targetFrame = Math.min(frameCount - 1, Math.floor(scrollFraction * frameCount));
-                
-                // Show text at specific points
-                if (scrollFraction > 0.3 && scrollFraction < 0.7) {
-                    scrollyText.classList.add('visible');
-                } else {
-                    scrollyText.classList.remove('visible');
-                }
+        // Close modal when clicking on the overlay backdrop
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
             }
         });
 
-        function animate() {
-            // Smoothly interpolate between current frame and target frame
-            const ease = 0.1;
-            currentInterpolatedFrame += (targetFrame - currentInterpolatedFrame) * ease;
-            
-            if (Math.abs(currentInterpolatedFrame - transformation.frame) > 0.01) {
-                transformation.frame = currentInterpolatedFrame;
-                render();
-            }
-            
-            requestAnimationFrame(animate);
-        }
+        // Handle Form Submission & WhatsApp redirection
+        consultationForm.addEventListener('submit', (e) => {
+            e.preventDefault();
 
-        requestAnimationFrame(animate);
+            const firstName = document.getElementById('modal-first-name').value.trim();
+            const lastName = document.getElementById('modal-last-name').value.trim();
+            const email = document.getElementById('modal-email').value.trim();
+            const phone = document.getElementById('modal-phone').value.trim();
+            const role = document.getElementById('modal-role').value;
+
+            // Formulate WhatsApp message text
+            const message = `Hello AlignPro Team,\n\nI would like to book a consultation for AlignPro clear aligners.\n\nHere are my booking details:\n- Name: ${firstName} ${lastName}\n- Email: ${email}\n- Phone: ${phone}\n- Profile: ${role}\n\nPlease let me know the available time slots. Thank you!`;
+
+            // Build the WhatsApp click-to-chat URL
+            const whatsappUrl = `https://wa.me/1234567890?text=${encodeURIComponent(message)}`;
+
+            // Open WhatsApp in a new window/tab
+            window.open(whatsappUrl, '_blank');
+
+            // Close and reset the modal form
+            closeModal();
+            consultationForm.reset();
+        });
+
     </script>
 </body>
 
