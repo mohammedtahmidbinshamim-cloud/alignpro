@@ -923,7 +923,8 @@ section {
     max-width: 720px;
     margin: 0 auto;
     position: relative;
-    height: 450px;
+    aspect-ratio: 720 / 450;
+    height: auto;
 }
 
 .anatomy-lines-svg {
@@ -1069,41 +1070,14 @@ section {
         font-size: 2rem;
     }
 
-    .anatomy-interactive-container {
-        aspect-ratio: auto;
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-        align-items: center;
+    .anatomy-callout h4 {
+        font-size: calc(0.45rem + 0.8vw);
+        margin-bottom: 2px;
     }
 
-    .anatomy-lines-svg {
-        display: none;
-    }
-
-    .anatomy-center-visual {
-        position: relative;
-        top: auto;
-        left: auto;
-        transform: none;
-        width: 60%;
-        max-width: 250px;
-        margin-bottom: 20px;
-    }
-
-    .anatomy-callout {
-        position: relative;
-        width: 100%;
-        top: auto;
-        left: auto;
-        right: auto;
-        text-align: center !important;
-        background: #ffffff;
-        padding: 20px;
-        border-radius: 12px;
-        border: 1px solid rgba(0, 0, 0, 0.05);
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+    .anatomy-callout p {
+        font-size: calc(0.32rem + 0.7vw);
+        line-height: 1.25;
     }
 }
 
